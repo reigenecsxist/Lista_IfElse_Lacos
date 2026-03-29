@@ -3,19 +3,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.lista_ifelse_lacos;
+
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Gabriel de Moura
+ * @author Usuário do Windows
  */
-public class Exercicio7 {
+public class Exercicio8 {
     
-    Exercicio7(){
-        int lados = Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade de lados do polígono:"));
-        double medida = Float.parseFloat(JOptionPane.showInputDialog("Inisira a medida do lado em centímetros"));
+    Exercicio8(){
         
-        switch(lados){
+        int lados = Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade de lados do polígono:"));
+        
+        if(lados<3)JOptionPane.showMessageDialog(null, "NÃO É UM POLÍGONO.");
+        else if(lados>5) JOptionPane.showMessageDialog(null, "POLÍGONO NÃO IDENTIFICADO.");
+        else{
+            double medida = Float.parseFloat(JOptionPane.showInputDialog("Inisira a medida do lado em centímetros"));
+            
+            switch(lados){
             case 3:
                 JOptionPane.showMessageDialog(null, "TRIÂNGULO\n\nÁrea: "+(((medida*medida)*Math.sqrt(medida))/4));
                 break;
@@ -28,11 +34,12 @@ public class Exercicio7 {
                  JOptionPane.showMessageDialog(null, "PENTÁGONO\n\nÁrea: "+(medida*medida)*1.7205);
                  break;
             }
+        }
+        
+    }
+        
+    public static void main(String[] args) {
+        Exercicio8 ex8 = new Exercicio8();
     }
     
-    public static void main(String[] args) {
-        
-        Exercicio7 ex7 = new Exercicio7();
-        
-    }
 }
